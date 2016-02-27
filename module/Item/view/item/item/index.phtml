@@ -1,0 +1,31 @@
+<?php
+
+$title = $this->translate('item.title');
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('item', array('action'=>'add'));?>"><?php echo $this->translate('add.new.item');?></a>
+</p>
+
+<table class="table">
+<tr>
+    <th><?php echo $this->translate('item.name');?></th>
+    <th><?php echo $this->translate('item.description');?></th>
+    <th><?php echo $this->translate('item.status');?></th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($items as $item) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($item->name);?></td>
+    <td><?php echo $this->escapeHtml($item->description);?></td>
+    <td><?php echo $this->escapeHtml($item->status==1?$this->translate('item.in.stock'):$this->translate('item.out.of.stock'));?></td>
+    <td>
+        <a href="<?php echo $this->url('item',
+            array('action'=>'edit', 'id' => $item->item_id));?>"><?php echo $this->translate('item.edit');?></a>
+        <a href="<?php echo $this->url('item',
+            array('action'=>'delete', 'id' => $item->item_id));?>"><?php echo $this->translate('item.delete.label');?></a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

@@ -1,0 +1,24 @@
+<?php
+ $title = $this->translate('item.delete');
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <p><?php echo $this->translate('item.are.you.sure.want.to.delete');?>
+     <b><?php echo $this->translate('item.label');?></b>='<?php echo $this->escapeHtml($item->name); ?>'
+     <b><?php echo $this->translate('item.description');?></b>='<?php echo $this->escapeHtml($item->description); ?>'
+     <?php echo $this->translate('and.status');?> <b><?php echo $this->translate('item.status');?></b>='<?php echo $this->escapeHtml($item->status); ?>'?
+ </p>
+ <?php
+ $url = $this->url('item', array(
+     'action' => 'delete',
+     'id'     => $this->id,
+ ));
+ ?>
+ <form action="<?php echo $url; ?>" method="post">
+ <div>
+     <input type="hidden" name="id" value="<?php echo (int) $item->item_id; ?>" />
+     <input type="submit" name="del" value="<?php echo $this->translate('yes');?>" />
+     <input type="submit" name="del" value="<?php echo $this->translate('no');?>" />
+ </div>
+ </form>
