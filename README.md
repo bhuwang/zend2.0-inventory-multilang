@@ -13,9 +13,10 @@ Installation
 You should have the following details to up and running.
 
 Database deails:
-Name: inventory
-User: root
-Pass: liferay
+
+Name: inventory<br>
+User: root<br>
+Pass: liferay<br>
 
 or you can simply change config/autoload/local.php and config/autoload/global.php file.
 
@@ -23,13 +24,13 @@ or you can simply change config/autoload/local.php and config/autoload/global.ph
 
 The application supports two major languages English and Nepali. Two change the language you can just change the file below.
 
-File Path:
+File Path:<br>
 module/Application/config/module.config.php
 
 Change the translator section of the file.
 
-for English: en_US
-for Nepali: ne_NP
+for English: en_US<br>
+for Nepali: ne_NP<br>
 
 
 ### Apache setup
